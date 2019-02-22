@@ -6,7 +6,7 @@ import thunkMiddleware from 'redux-thunk';
 import App from './App';
 
 import productsReducer from "./store/reducers/productsReducer";
-import cartReducer from "./store/reducers/cartReducer";
+import orderReducer from "./store/reducers/orderReducer";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
@@ -14,7 +14,7 @@ import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
     products: productsReducer,
-    cart: cartReducer
+    order: orderReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

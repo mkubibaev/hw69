@@ -3,7 +3,7 @@ import {
     GET_PRODUCTS_REQUEST,
     GET_PRODUCTS_SUCCESS,
     ADD_PRODUCT,
-    REMOVE_PRODUCT
+    REMOVE_PRODUCT, RESET_CART
 } from "../actions/actionTypes";
 
 const INITIAL_PRODUCTS = {
@@ -72,6 +72,12 @@ const productsReducer = (state = initialState, action) => {
                     [action.productName]: state.cartProducts[action.productName] - 1
                 },
                 totalPrice: state.totalPrice - PRODUCT_PRICES[action.productName]
+            };
+        case RESET_CART:
+            return {
+                ...state,
+                cartProducts: INITIAL_PRODUCTS,
+                totalPrice: DELIVERY_PRICE
             };
         default:
             return state

@@ -4,3 +4,9 @@ export const GET_PRODUCTS_FAILURE = 'GET_PRODUCTS_FAILURE';
 
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
+
+export const ORDER_REQUEST = 'ORDER_REQUEST';
+export const ORDER_SUCCESS = 'ORDER_SUCCESS';
+export const ORDER_FAILURE = 'ORDER_FAILURE';
+
+export const RESET_CART = 'RESET_CART';

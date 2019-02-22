@@ -10,7 +10,7 @@ const cartReducer = (state = initialState, action) => {
         //     console.log(action.index);
         //     return {
         //         ...state,
-        //         // cart: state.cart[action.index]
+        //         // cartProducts: state.cartProducts[action.index]
         //     };
         default:
             return state;

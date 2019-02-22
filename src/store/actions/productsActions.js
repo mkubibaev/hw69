@@ -1,4 +1,10 @@
-import {ADD_PRODUCT, GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS} from "./actionTypes";
+import {
+    GET_PRODUCTS_FAILURE,
+    GET_PRODUCTS_REQUEST,
+    GET_PRODUCTS_SUCCESS,
+    ADD_PRODUCT,
+    REMOVE_PRODUCT
+} from "./actionTypes";
 import axios from '../../axios-dishes';
 
 export const getProductsRequest = () => ({type: GET_PRODUCTS_REQUEST});
@@ -17,4 +23,5 @@ export const getProductList = () => {
 };
 
 export const addProduct = productIndex => ({type: ADD_PRODUCT, productIndex});
+export const removeProduct = index => ({type: REMOVE_PRODUCT, index});
 

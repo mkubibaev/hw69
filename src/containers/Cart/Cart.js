@@ -8,16 +8,17 @@ class Cart extends Component {
             <div className="cart">
                 <h3 className="border-bottom mb-3">Cart</h3>
                 <CartItems
-                    dishes={this.props.products}
-                    cartItemsId={this.props.cart}
+                    cartProducts={this.props.cartProducts}
                 />
+                <p>Total price: {this.props.totalPrice}</p>
             </div>
         );
     }
 }
 
 const mapStateToProps = state => ({
-    cart: state.products.cart,
+    cartProducts: state.products.cartProducts,
+    totalPrice: state.products.totalPrice
 });
 
 export default connect(mapStateToProps)(Cart);

@@ -1,8 +1,8 @@
 import {
-    ADD_PRODUCT,
     GET_PRODUCTS_FAILURE,
     GET_PRODUCTS_REQUEST,
     GET_PRODUCTS_SUCCESS,
+    ADD_PRODUCT,
     REMOVE_PRODUCT
 } from "../actions/actionTypes";
 
@@ -17,7 +17,7 @@ const DELIVERY_PRICE = 150;
 
 const initialState = {
     products: [],
-    cart: {...INITIAL_PRODUCTS},
+    cartProducts: {...INITIAL_PRODUCTS},
     totalPrice: DELIVERY_PRICE,
     error: null,
     loading: true
@@ -53,9 +53,9 @@ const productsReducer = (state = initialState, action) => {
 
             return {
                 ...state,
-                cart: {
-                    ...state.cart,
-                    [addingProduct.title]: state.cart[addingProduct.title] + 1
+                cartProducts: {
+                    ...state.cartProducts,
+                    [addingProduct.title]: state.cartProducts[addingProduct.title] + 1
                 },
                 totalPrice: state.totalPrice + addingProduct.price
             };
@@ -64,9 +64,9 @@ const productsReducer = (state = initialState, action) => {
 
             return {
                 ...state,
-                cart: {
-                    ...state.cart,
-                    [removingProduct.title]: state.cart[removingProduct.title] - 1
+                cartProducts: {
+                    ...state.cartProducts,
+                    [removingProduct.title]: state.cartProducts[removingProduct.title] - 1
                 },
                 totalPrice: state.totalPrice - removingProduct.price
             };

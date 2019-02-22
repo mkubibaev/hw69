@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom';
 import {Provider} from "react-redux";
 import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import * as serviceWorker from './serviceWorker';
-
 import App from './App';
-import dishesReducer from "./store/reducers/dishesReducer";
+
+import productsReducer from "./store/reducers/productsReducer";
+import cartReducer from "./store/reducers/cartReducer";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import * as serviceWorker from './serviceWorker';
 
 const rootReducer = combineReducers({
-    dishes: dishesReducer
+    products: productsReducer,
+    cart: cartReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

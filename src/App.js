@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DishesList from "./containers/DishesList/DishesList";
+import DishesList from "./containers/ProductList/ProductList";
 import Cart from "./containers/Cart/Cart";
 
 class App extends Component {

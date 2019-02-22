@@ -13,6 +13,13 @@ const INITIAL_PRODUCTS = {
     'Shakarap': 0,
 };
 
+const PRODUCT_PRICES = {
+    'Pizza': 500,
+    'Pilaf': 240,
+    'Barbecue': 200,
+    'Shakarap': 100,
+};
+
 const DELIVERY_PRICE = 150;
 
 const initialState = {
@@ -49,26 +56,22 @@ const productsReducer = (state = initialState, action) => {
                 loading: false
             };
         case ADD_PRODUCT:
-            const addingProduct = state.products[action.productIndex];
-
             return {
                 ...state,
                 cartProducts: {
                     ...state.cartProducts,
-                    [addingProduct.title]: state.cartProducts[addingProduct.title] + 1
+                    [action.productName]: state.cartProducts[action.productName] + 1
                 },
-                totalPrice: state.totalPrice + addingProduct.price
+                totalPrice: state.totalPrice + PRODUCT_PRICES[action.productName]
             };
         case REMOVE_PRODUCT:
-            const removingProduct = state.products[action.productIndex];
-
             return {
                 ...state,
                 cartProducts: {
                     ...state.cartProducts,
-                    [removingProduct.title]: state.cartProducts[removingProduct.title] - 1
+                    [action.productName]: state.cartProducts[action.productName] - 1
                 },
-                totalPrice: state.totalPrice - removingProduct.price
+                totalPrice: state.totalPrice - PRODUCT_PRICES[action.productName]
             };
         default:
             return state

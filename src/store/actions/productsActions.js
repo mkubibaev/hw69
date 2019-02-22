@@ -22,6 +22,6 @@ export const getProductList = () => {
     }
 };
 
-export const addProduct = productIndex => ({type: ADD_PRODUCT, productIndex});
-export const removeProduct = index => ({type: REMOVE_PRODUCT, index});
+export const addProduct = productName => ({type: ADD_PRODUCT, productName});
+export const removeProduct = productName => ({type: REMOVE_PRODUCT, productName});
 

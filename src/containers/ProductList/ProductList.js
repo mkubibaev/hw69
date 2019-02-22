@@ -19,13 +19,13 @@ class ProductList extends Component {
             <div className="products-menu">
                 <h3 className="border-bottom mb-3">Menu</h3>
                 <div className="row">
-                    {this.props.products.map((product, index) => (
+                    {this.props.products.map(product => (
                         <div className="col-12 col-sm-6 col-lg-4" key={product.id}>
                             <Product
                                 title={product.title}
                                 imgUrl={product.imgUrl}
                                 price={product.price}
-                                onAdd={() => this.props.addProduct(index)}
+                                onAdd={() => this.props.addProduct(product.title)}
                             />
                         </div>
                     ))}
@@ -42,7 +42,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     getProductList: () => dispatch(getProductList()),
-    addProduct: productIndex => dispatch(addProduct(productIndex))
+    addProduct: productName => dispatch(addProduct(productName))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
